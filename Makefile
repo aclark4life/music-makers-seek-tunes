@@ -43,7 +43,7 @@ include base.mk
 # E.g.
 #
 # Uncomment next line to customize the default goal
-#.DEFAULT_GOAL := commit-push
+.DEFAULT_GOAL := commit-push
 #
 # Uncomment next line to customize the project name
 #PROJECT_NAME := my_project
