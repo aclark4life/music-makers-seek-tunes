@@ -43,28 +43,29 @@ while True:
         if not hasattr(reply, "in_reply_to_status_id_str"):
             continue
 
-        count += 1
-        full_text = reply._json["full_text"]
-        url = regex.search(full_text)
-
-        if url:
-            match = url.group()
-            full_text = full_text.replace(
-                match, "<a href='%s' target='_blank'>%s</a>" % (match, match)
-            )
-        else:
-            continue
-
-        entry = "<tr><td>%s</td><td>%s</td><td>%s</td></tr>\n" % (
-            count,
-            reply._json["user"]["screen_name"],
-            full_text,
-        )
-        print(entry)
-        music_makers_seek_tunes.write(entry)
-
         if reply.in_reply_to_status_id == tweet_id:
+
             logging.info("reply of tweet:{}".format(reply.full_text))
+
+            count += 1
+            full_text = reply._json["full_text"]
+            url = regex.search(full_text)
+
+            if url:
+                match = url.group()
+                full_text = full_text.replace(
+                    match, "<a href='%s' target='_blank'>%s</a>" % (match, match)
+                )
+            else:
+                continue
+
+            entry = "<tr><td>%s</td><td>%s</td><td>%s</td></tr>\n" % (
+                count,
+                reply._json["user"]["screen_name"],
+                full_text,
+            )
+            print(entry)
+            music_makers_seek_tunes.write(entry)
 
     except StopIteration:
         break
