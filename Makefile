@@ -59,7 +59,7 @@ run:
 	python music-makers-seek-tunes.py
 
 edit:
-	vi music-makers-seek-tunes.py
+	vi music-makers-seek-tunes.py README.rst
 
 open:
 	open music-makers-seek-tunes.html
