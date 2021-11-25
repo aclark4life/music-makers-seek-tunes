@@ -19,7 +19,7 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 api = tweepy.API(auth)
 
 replies = tweepy.Cursor(
-    tweepy.api.search_tweets,
+    api.search_tweets,
     q="to:{}".format(user_name),
     since_id=tweet_id,
     tweet_mode="extended",
