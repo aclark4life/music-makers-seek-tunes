@@ -24,11 +24,15 @@ replies = tweepy.Cursor(
 ).items()
 
 count = 0
+
+music_makers_seek_tunes = open("music-makers-seek-tunes.html", "rw")
+
 while True:
     try:
         count += 1
         reply = replies.next()
-        print("%s: %s" % (count, reply))
+        print("%s: %s" % (count, reply["screen_name"))
+        music_makers_seek_tunes.write("%s: %s" % (count, reply["screen_name"))
         if not hasattr(reply, "in_reply_to_status_id_str"):
             continue
         if reply.in_reply_to_status_id == tweet_id:
