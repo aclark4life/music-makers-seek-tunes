@@ -60,3 +60,6 @@ run:
 
 edit:
 	vi music-makers-seek-tunes.py
+
+open:
+	open music-makers-seek-tunes.html

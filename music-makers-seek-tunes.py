@@ -20,6 +20,7 @@ replies = tweepy.Cursor(
     api.search_tweets,
     q="to:{}".format(user_name),
     since_id=tweet_id,
+    max_id="1461408007447711749",
     tweet_mode="extended",
 ).items()
 
