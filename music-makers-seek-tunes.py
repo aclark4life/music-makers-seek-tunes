@@ -24,10 +24,13 @@ replies = tweepy.Cursor(
     since_id=tweet_id,
     tweet_mode="extended",
 ).items()
+
+count = 0
 while True:
     try:
+        count += 1
         reply = replies.next()
-        print(reply)
+        print("%s: %s" % (count, reply))
         if not hasattr(reply, "in_reply_to_status_id_str"):
             continue
         if reply.in_reply_to_status_id == tweet_id:
