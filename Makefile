@@ -55,7 +55,7 @@ include base.mk
 #.PHONY: serve
 #serve: django-serve-webpack
 
-seek:
+run:
 	python music-makers-seek-tunes.py
 
 edit:
