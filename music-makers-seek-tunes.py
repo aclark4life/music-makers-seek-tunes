@@ -36,6 +36,7 @@ count = 0
 music_makers_seek_tunes = open("music-makers-seek-tunes.html", "w")
 music_makers_seek_tunes.write("<table>")
 
+print("Got %s" % replies)
 
 while True:
     try:
