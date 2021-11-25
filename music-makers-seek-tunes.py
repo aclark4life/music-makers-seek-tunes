@@ -11,8 +11,6 @@ tweet_id = "1461361593564811278"
 
 consumer_key = os.environ.get("TWITTER_API_KEY")
 consumer_secret = os.environ.get("TWITTER_API_KEY_SECRET")
-# access_token = os.environ.get("TWITTER_ACCESS_TOKEN")
-# access_token_secret = os.environ.get("TWITTER_ACCESS_TOKEN_SECRET")
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 
@@ -35,15 +33,6 @@ while True:
             continue
         if reply.in_reply_to_status_id == tweet_id:
             logging.info("reply of tweet:{}".format(reply.full_text))
-
-    # except tweepy.errors.RateLimitError as e:
-    #     logging.error("Twitter api rate limit reached".format(e))
-    #     time.sleep(60)
-    #     continue
-
-    # except tweepy.errors.TweepError as e:
-    #     logging.error("Tweepy error occured:{}".format(e))
-    #     break
 
     except StopIteration:
         break
