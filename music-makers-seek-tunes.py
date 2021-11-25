@@ -1,6 +1,7 @@
 # https://stackoverflow.com/a/55804977
 
-user_name = "@nameofuser"
+user_name = "@ThatKevinSmith"
+tweet_id = "1461361593564811278"
 
 replies = tweepy.Cursor(
     api.search, q="to:{}".format(user_name), since_id=tweet_id, tweet_mode="extended"
