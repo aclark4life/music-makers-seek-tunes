@@ -1,6 +1,9 @@
 # https://stackoverflow.com/a/55804977
 
 import tweepy
+import logging
+
+logger = logging.Logger("info")
 
 user_name = "@ThatKevinSmith"
 tweet_id = "1461361593564811278"
