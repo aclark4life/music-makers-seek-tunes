@@ -1,4 +1,5 @@
 import tweepy
+import os
 
 consumer_key = os.environ.get("TWITTER_API_KEY")
 consumer_secret = os.environ.get("TWITTER_API_KEY_SECRET")
