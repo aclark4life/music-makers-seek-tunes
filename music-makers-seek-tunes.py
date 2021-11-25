@@ -18,14 +18,14 @@ while True:
         if reply.in_reply_to_status_id == tweet_id:
             logging.info("reply of tweet:{}".format(reply.full_text))
 
-    except tweepy.error.RateLimitError as e:
-        logging.error("Twitter api rate limit reached".format(e))
-        time.sleep(60)
-        continue
+    # except tweepy.errors.RateLimitError as e:
+    #     logging.error("Twitter api rate limit reached".format(e))
+    #     time.sleep(60)
+    #     continue
 
-    except tweepy.error.TweepError as e:
-        logging.error("Tweepy error occured:{}".format(e))
-        break
+    # except tweepy.errors.TweepError as e:
+    #     logging.error("Tweepy error occured:{}".format(e))
+    #     break
 
     except StopIteration:
         break
