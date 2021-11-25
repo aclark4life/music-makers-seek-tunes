@@ -41,14 +41,13 @@ print("Got %s" % replies)
 while True:
     try:
         reply = replies.next()
+        print(reply)
         if not hasattr(reply, "in_reply_to_status_id_str"):
             print("Not in reply to")
             continue
 
         if reply.in_reply_to_status_id == tweet_id:
             print("Not in reply to %s" % tweet_id)
-
-            logging.info("reply of tweet:{}".format(reply.full_text))
 
             count += 1
             full_text = reply._json["full_text"]
@@ -69,6 +68,7 @@ while True:
             )
             print(entry)
             music_makers_seek_tunes.write(entry)
+        logging.info("reply of tweet:{}".format(reply.full_text))
 
     except StopIteration:
         break
