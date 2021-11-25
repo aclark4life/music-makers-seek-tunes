@@ -16,7 +16,10 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 api = tweepy.API()
 
 replies = tweepy.Cursor(
-    tweepy.api.search_tweets, q="to:{}".format(user_name), since_id=tweet_id, tweet_mode="extended"
+    tweepy.api.search_tweets,
+    q="to:{}".format(user_name),
+    since_id=tweet_id,
+    tweet_mode="extended",
 ).items()
 while True:
     try:
