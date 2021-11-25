@@ -36,7 +36,7 @@ while True:
             % (
                 count,
                 reply._json["user"]["screen_name"],
-                reply._json["user"]["full_text"],
+                reply._json["full_text"],
             )
         )
         if not hasattr(reply, "in_reply_to_status_id_str"):
