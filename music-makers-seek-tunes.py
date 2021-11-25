@@ -39,11 +39,11 @@ music_makers_seek_tunes.write("<table>")
 
 while True:
     try:
-        count += 1
         reply = replies.next()
         if not hasattr(reply, "in_reply_to_status_id_str"):
             continue
 
+        count += 1
         full_text = reply._json["full_text"]
         url = regex.search(full_text)
 
