@@ -1,12 +1,12 @@
 # https://stackoverflow.com/a/55804977
 
-from tweepy import api
+import tweepy
 
 user_name = "@ThatKevinSmith"
 tweet_id = "1461361593564811278"
 
 replies = tweepy.Cursor(
-    api.search, q="to:{}".format(user_name), since_id=tweet_id, tweet_mode="extended"
+    tweepy.api.search, q="to:{}".format(user_name), since_id=tweet_id, tweet_mode="extended"
 ).items()
 while True:
     try:
