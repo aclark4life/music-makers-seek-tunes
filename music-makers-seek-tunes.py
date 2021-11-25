@@ -25,7 +25,7 @@ replies = tweepy.Cursor(
 
 count = 0
 
-music_makers_seek_tunes = open("music-makers-seek-tunes.html", "rw")
+music_makers_seek_tunes = open("music-makers-seek-tunes.html", "w")
 
 while True:
     try:
