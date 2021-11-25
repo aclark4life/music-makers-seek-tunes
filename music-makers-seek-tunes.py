@@ -41,12 +41,12 @@ print("Got %s" % replies)
 while True:
     try:
         reply = replies.next()
-        print(reply)
         if not hasattr(reply, "in_reply_to_status_id_str"):
+
             print("Not in reply to")
             continue
 
-        if reply.in_reply_to_status_id == tweet_id:
+        if reply.in_reply_to_status_id_str == tweet_id:
             print("Not in reply to %s" % tweet_id)
 
             count += 1
