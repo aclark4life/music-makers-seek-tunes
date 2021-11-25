@@ -54,3 +54,6 @@ include base.mk
 # Uncomment next two lines to add a "phony" target
 #.PHONY: serve
 #serve: django-serve-webpack
+
+seek:
+	python music-makers-seek-tunes.py
