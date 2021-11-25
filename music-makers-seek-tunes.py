@@ -5,8 +5,10 @@ import tweepy
 user_name = "@ThatKevinSmith"
 tweet_id = "1461361593564811278"
 
+api = tweepy.API()
+
 replies = tweepy.Cursor(
-    tweepy.api.search, q="to:{}".format(user_name), since_id=tweet_id, tweet_mode="extended"
+    api.search, q="to:{}".format(user_name), since_id=tweet_id, tweet_mode="extended"
 ).items()
 while True:
     try:
