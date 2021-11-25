@@ -27,6 +27,7 @@ replies = tweepy.Cursor(
 while True:
     try:
         reply = replies.next()
+        print(reply)
         if not hasattr(reply, "in_reply_to_status_id_str"):
             continue
         if reply.in_reply_to_status_id == tweet_id:
