@@ -31,7 +31,7 @@ while True:
     try:
         count += 1
         reply = replies.next()
-        print("%s: %s" % (count, reply["screen_name"))
+        print("%s: %s" % (count, reply["screen_name"]))
         music_makers_seek_tunes.write("%s: %s" % (count, reply["screen_name"))
         if not hasattr(reply, "in_reply_to_status_id_str"):
             continue
