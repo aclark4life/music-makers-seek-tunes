@@ -26,19 +26,20 @@ replies = tweepy.Cursor(
 count = 0
 
 music_makers_seek_tunes = open("music-makers-seek-tunes.html", "w")
+music_makers_seek_tunes.write("<table>")
+
 
 while True:
     try:
         count += 1
         reply = replies.next()
-        print(
-            "%s. %s %s\n"
-            % (
-                count,
-                reply._json["user"]["screen_name"],
-                reply._json["full_text"],
-            )
+        entry = "<tr><td>%s</td><td>%s</td><td>%s</td></tr>\n" % (
+            count,
+            reply._json["user"]["screen_name"],
+            reply._json["full_text"],
         )
+        print(entry)
+        music_makers_seek_tunes.write(entry)
         if not hasattr(reply, "in_reply_to_status_id_str"):
             continue
         if reply.in_reply_to_status_id == tweet_id:
@@ -50,3 +51,5 @@ while True:
     except Exception as e:
         logger.error("Failed while fetching replies {}".format(e))
         break
+
+music_makers_seek_tunes.write("</table>")
