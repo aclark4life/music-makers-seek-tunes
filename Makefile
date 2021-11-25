@@ -57,3 +57,6 @@ include base.mk
 
 seek:
 	python music-makers-seek-tunes.py
+
+edit:
+	vi music-makers-seek-tunes.py
