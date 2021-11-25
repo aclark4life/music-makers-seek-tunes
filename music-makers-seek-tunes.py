@@ -41,9 +41,11 @@ while True:
     try:
         reply = replies.next()
         if not hasattr(reply, "in_reply_to_status_id_str"):
+            print("Not in reply to")
             continue
 
         if reply.in_reply_to_status_id == tweet_id:
+            print("Not in reply to %s" % tweet_id)
 
             logging.info("reply of tweet:{}".format(reply.full_text))
 
