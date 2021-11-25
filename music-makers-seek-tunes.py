@@ -31,9 +31,14 @@ while True:
     try:
         count += 1
         reply = replies.next()
-        print("%s: %s\n" % (count, reply._json["user"]["screen_name"]))
-        # print("%s: %s" % (count, reply["screen_name"]))
-        # music_makers_seek_tunes.write("%s: %s" % (count, reply["screen_name"]))
+        print(
+            "%s. %s %s\n"
+            % (
+                count,
+                reply._json["user"]["screen_name"],
+                reply._json["user"]["full_text"],
+            )
+        )
         if not hasattr(reply, "in_reply_to_status_id_str"):
             continue
         if reply.in_reply_to_status_id == tweet_id:
