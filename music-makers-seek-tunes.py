@@ -8,6 +8,8 @@ logger = logging.Logger("info")
 user_name = "@ThatKevinSmith"
 tweet_id = "1461361593564811278"
 
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+
 api = tweepy.API()
 
 replies = tweepy.Cursor(
