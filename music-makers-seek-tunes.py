@@ -51,6 +51,7 @@ while True:
 
             count += 1
             full_text = reply._json["full_text"]
+            screen_name = reply._json["user"]["screen_name"]
             url = regex.search(full_text)
 
             if url:
@@ -63,7 +64,7 @@ while True:
 
             entry = "<tr><td>%s</td><td>%s</td><td>%s</td></tr>\n" % (
                 count,
-                reply._json["user"]["screen_name"],
+                "<a href='%s' target='_blank'>%s</a>" % (screen_name, screen_name),
                 full_text,
             )
             print(entry)
