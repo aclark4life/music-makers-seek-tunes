@@ -57,16 +57,15 @@ while True:
             if url:
                 match = url.group()
                 full_text = full_text.replace(
-                    match,
-                    "<a href='https://twitter.com/%s' target='_blank'>%s</a>"
-                    % (match, match),
+                    match, "<a href='%s' target='_blank'>%s</a>" % (match, match)
                 )
             else:
                 continue
 
             entry = "<tr><td>%s</td><td>%s</td><td>%s</td></tr>\n" % (
                 count,
-                "<a href='%s' target='_blank'>%s</a>" % (screen_name, screen_name),
+                "<a href='https://twitter.com/%s' target='_blank'>%s</a>"
+                % (screen_name, screen_name),
                 full_text,
             )
             print(entry)
