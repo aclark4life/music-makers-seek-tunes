@@ -34,7 +34,7 @@ replies = tweepy.Cursor(
 count = 0
 
 music_makers_seek_tunes = open("music-makers-seek-tunes.html", "w")
-music_makers_seek_tunes.write("<table>")
+music_makers_seek_tunes.write("<table class='table table-light text-left'>")
 
 print("Got %s" % replies)
 
