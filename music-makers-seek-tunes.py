@@ -57,7 +57,9 @@ while True:
             if url:
                 match = url.group()
                 full_text = full_text.replace(
-                    match, "<a href='https://twitter.com/%s' target='_blank'>%s</a>" % (match, match)
+                    match,
+                    "<a href='https://twitter.com/%s' target='_blank'>%s</a>"
+                    % (match, match),
                 )
             else:
                 continue
